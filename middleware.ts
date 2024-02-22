@@ -13,8 +13,11 @@ export async function middleware(req: NextRequest) {
   const region = geo?.region || 'CA'
 
 if(country==="IN"){
-    return NextResponse.redirect(new URL('https://ijmindia.org', req.url))
+    return NextResponse.redirect(new URL('https://ijmindia.org/', req.url))
 
+}
+if (country==="PH"){
+  return NextResponse.redirect(new URL("https://ijm.org.ph", req.url))
 }
 
 return NextResponse.next()
