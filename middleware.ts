@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { geolocation } from '@vercel/edge';
  
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 // This function can be async if you need to perform asynchronous tasks
 export default function middleware(request: NextRequest) {
   const { nextUrl: url, geo } = request
