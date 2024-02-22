@@ -9,7 +9,7 @@ export const config = {
 
 export async function middleware(req: NextRequest) {
   const { nextUrl: url, geo } = req
-  const country = geo ? geo.country : req.headers.get('CF-IPCountry') !== undefined ? req.headers.get('CF-IPCountry') : 'US'
+  const country =  geo?.country 
 
 if(country==="IN"){
     return NextResponse.redirect(new URL('https://ijmindia.org/', req.url))
